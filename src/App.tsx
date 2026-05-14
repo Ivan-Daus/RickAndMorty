@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/sonner"
 function App() {
 
   const [datos, setDatos] = useState<Personaje[]>([])
-
+  /*  */
   useEffect(() => {
     const obtenerPersonajes = async () => {
       let personajes = []
@@ -13,7 +13,7 @@ function App() {
       const response = await fetch('https://rickandmortyapi.com/api/character')
       const data = await response.json()
       personajes = [...data.results]
-      
+
       // Obtener las demás páginas
       for (let i = 2; i <= data.info.pages; i++) {
         const res = await fetch(`https://rickandmortyapi.com/api/character?page=${i}`)
